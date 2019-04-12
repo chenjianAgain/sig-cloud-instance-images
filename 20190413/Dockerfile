@@ -11,6 +11,6 @@ RUN yum -y --setopt=tsflags=nodocs update && \
 
 ADD index.html /var/www/html/
 
-#RUN yum systemctl start httpd
+RUN systemctl restart httpd
 
 EXPOSE 80
