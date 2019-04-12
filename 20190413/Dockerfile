@@ -9,4 +9,8 @@ RUN yum -y --setopt=tsflags=nodocs update && \
     yum -y --setopt=tsflags=nodocs install httpd && \
     yum clean all
 
+ADD index.html /var/www/html/
+
+RUN yum systemctl start httpd
+
 EXPOSE 80
